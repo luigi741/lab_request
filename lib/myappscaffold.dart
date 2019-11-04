@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:lab_request/pages/events.dart';
+import 'package:lab_request/pages/home.dart';
+import 'package:lab_request/pages/requests.dart';
 
 class MyAppScaffold extends StatefulWidget {
 	@override
@@ -24,6 +27,7 @@ class _MyAppScaffoldState extends State<MyAppScaffold> {
 			appBar: AppBar(
 				title: Text('HatchGarage'),
 			),
+			body: (_navIndex == 0) ? HomePage() : (_navIndex == 1) ? Events() : Requests(),
 			bottomNavigationBar: BottomNavigationBar(
 				items: <BottomNavigationBarItem>[
 					BottomNavigationBarItem(
