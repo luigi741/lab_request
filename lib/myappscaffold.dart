@@ -7,6 +7,17 @@ class MyAppScaffold extends StatefulWidget {
 }
 
 class _MyAppScaffoldState extends State<MyAppScaffold> {
+	// Variables
+	int _navIndex = 0;
+
+	// Methods
+	void setBotNavIndex(int index) {
+		setState(() {
+			_navIndex = index;
+		});
+	}
+
+	// Widget definition
 	@override
 	Widget build(BuildContext context) {
 		return Scaffold(
@@ -28,6 +39,8 @@ class _MyAppScaffoldState extends State<MyAppScaffold> {
 						title: Text('Requests')
 					)
 				],
+				onTap: setBotNavIndex,
+				currentIndex: _navIndex,
 			),
 		);
 	}
